@@ -1,0 +1,76 @@
+@extends('layouts.mainlayout')
+@section('title')
+	Patient Registration
+@stop
+
+@section('nav-pane')
+	<a href="/" class="btn btn-warning btn-block">Back to Landing Page</a>
+@stop
+
+@section('content')
+	<div class="col-sm-12 well">
+		<h1 style="text-align: center;">REGISTRATION PAGE</h1>
+		<hr style="border-color: black !important;">
+		<br>
+		<br>
+		<form class="form-horizontal" action="/register" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+			<div class="form-group">
+			    <label for="fullname" class="col-sm-3">Full Name:</label>
+			    <div class="col-sm-9">
+			    	<input type="text" class="form-control" id="fullname" name="fullname">
+			  	</div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="birthday" class="col-sm-3">Birthday:</label>
+			    <div class="col-sm-9">
+			    	<input type="date" class="form-control" id="birthday" name="birthday">
+			  	</div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="sex" class="col-sm-3">Sex:</label>
+			    <div class="col-sm-9">
+			    	<select class="form-control" id="sex" name="sex">
+			    		<option>Male</option>
+			    		<option>Female</option>
+			    	</select>
+			  	</div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="address" class="col-sm-3">Address:</label>
+			    <div class="col-sm-9">
+			    	<input type="text" class="form-control" id="address" name="address">
+			  	</div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="civilstatus" class="col-sm-3">Civil Status:</label>
+			    <div class="col-sm-9">
+			    	<select class="form-control" id="civilstatus" name="civilstatus">
+			    		<option>Single</option>
+			    		<option>Married</option>
+			    		<option>Divorced</option>
+			    	</select>
+			  	</div>
+		  	</div>
+	        <div class="form-group">
+			    <label for="fullname" class="col-sm-3">Username:</label>
+			    <div class="col-sm-9">
+			    	<input type="text" class="form-control" id="username" name="username">
+			  	</div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="fullname" class="col-sm-3">Password:</label>
+			    <div class="col-sm-9">
+			    	<input type="password" class="form-control" id="password" name="password">
+			  	</div>
+		  	</div>
+		  	<div class="form-group">
+	            <label for="profpic" class="col-sm-3">Upload a Photo: (Optional)</label>
+	            <input class="file col-sm-9" type="file" id="profpic" name="profpic">
+	        </div>
+	        <button type="submit" class="btn btn-success col-sm-7" id="uploadIDs">Register</button>
+	        <div class="col-sm-1"></div>
+	        <button type="reset" class="btn btn-danger col-sm-4">Reset</button>
+		</form>
+	</div>
+@stop

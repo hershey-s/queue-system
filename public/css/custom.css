@@ -1,0 +1,62 @@
+html * {
+	font-family: "Verdana" !important;
+}
+
+body {
+	background-color: #BDBDBD !important;
+}
+
+.left {	
+	
+}
+
+.middle {
+	right: 10px !important;
+}
+
+.main {
+	background-color: #E0E0E0;
+}
+
+li a .active{
+	background-color: #EF5350 !important;
+	color: black !important;
+}
+.navbar {
+	width: 100% !important;
+	background-color: #E53935 !important;	
+}
+
+ul li a, .navbar-brand {
+	color: white !important;
+}
+
+ul li a:hover, .navbar-brand:hover {
+	background-color: #EF9A9A !important;
+	color: black !important;
+}
+
+.logout {
+	position: absolute !important;
+	right: 0 !important;
+	float: right !important;
+	margin-right: 0 !important;
+}
+
+.patient {
+	background-color: white !important;
+}
+
+.patient thead {
+	background-color: #E53935 !important;
+	font-weight: bold;
+	color: white;
+}
+
+.patient tr:hover {
+	background-color: #EF9A9A !important;
+}
+
+.checkup-sort {
+	padding-right: 10px !important;
+}
