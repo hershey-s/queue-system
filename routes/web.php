@@ -15,12 +15,8 @@ Route::middleware('LoginCheck')->group(function() {
 	Route::post('/queue', 'QueueController@add_queue');
 	Route::get('/logout', 'LoginController@logout');
 
-	Route::get('/sendSMS', function(){
-		$myNum = '09219870637';
-		$pos = 'You are now number 10 in the queue.';
-		$name = 'Wanhitkeiow';
-		return sendSMS($myNum, $pos);
-	});
+	Route::get('/sendSMS', 'QueueController@sendSMS');
+	
 	Route::middleware('AdminCheck')->group(function() {
 		Route::get('/admin-panel', 'PagesController@admin');
 		Route::get('/update-status/{item}', 'QueueController@update');

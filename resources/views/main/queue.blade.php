@@ -19,9 +19,11 @@
 						<tr>
 							<th width="1">#</th>
 							<th>Patient Name</th>
-							<th width="1">Status</th>
 							@if(session('userType') == 'admin')
 								<th>Action</th>	
+								<th>Send SMS</th>
+							@else
+								<th width="1">Status</th>
 							@endif
 						</tr>
 					</thead>
@@ -33,9 +35,12 @@
 						<tr>
 							<td>{{ $z }}</td>
 							<td>{{ $q->patientName }}</td>
-							<td><span class="status btn btn-primary btn-block" href="javascript:void()">{{ $q->queueStatus }}</span></td>
+							
 							@if(session('userType') == 'admin')
-								<td><a href="/update-status/{{$q->patientID}}" class="btn btn-warning btn-block">Update Status</a></td>
+								<td><a href="/update-status/{{$q->queueID}}" class="btn btn-warning btn-block">Update Status</a></td>
+								<td><a href="/sendSMS?queue={{ $q->queueID }}&pos={{ $z }}&cat={{ $c->categoryName }}&id={{ $q->patientID }}" class="btn btn-success btn-block">Send SMS</a></td>
+							@else
+								<td><span class="status btn btn-primary btn-block" href="javascript:void()">{{ $q->queueStatus }}</span></td>
 							@endif
 							@endforeach
 						</tr>

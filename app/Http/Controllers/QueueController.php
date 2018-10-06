@@ -29,7 +29,15 @@ class QueueController extends Controller
 
     public function update($item) {
         $p = Patient::where('patientID', $item)->get();
-        DB::table('queues')->where('patientID', $item)->update(['queueStatus' => 'Finished']);
+        DB::table('queues')->where('queueID', $item)->update(['queueStatus' => 'Finished']);
         return redirect('/queue');
+    }
+
+    public function sendSMS(Request $r) {
+        $p = Patient::where('patientID', $r->id)->first();
+        $no = $p->mobileNo;
+        $mes = 'You are now number ' .$r->pos.' in the queue for '.$r->cat;
+        iText($no, $mes);
+        return back();
     }
 }

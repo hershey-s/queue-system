@@ -19,9 +19,9 @@ function sendSMS($mobNum, $pos){
 	return 'NASEND KO NA';
 }
 
-function itexmo($number,$message){
+function iText($no,$mes){
 	$ch = curl_init();
-	$itexmo = array('1' => $number, '2' => $message, '3' => 'TR-MIKEJ870637_7EDCM');
+	$itexmo = array('1' => $no, '2' => $mes, '3' => 'TR-MIKEJ870637_7EDCM');
 	curl_setopt($ch, CURLOPT_URL,"https://www.itexmo.com/php_api/api.php");
 	curl_setopt($ch, CURLOPT_POST, 1);
 	 curl_setopt($ch, CURLOPT_POSTFIELDS, 
@@ -29,6 +29,4 @@ function itexmo($number,$message){
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	$result = curl_exec ($ch);
 	curl_close ($ch);
-
-	return 'Natext ko na!';
 }
