@@ -4,19 +4,40 @@
 @stop
 
 @section('content')
-	<div class="col-sm-7 well">
-		<h1 style="text-align: center;">TEMPORARY LANDING PAGE</h1>
+<div class="row">
+	<div class="col-sm-3"></div>
+
+	<div class="col-sm-6 well">
+		<h1 style="text-align: center;">LOGIN PAGE</h1>
+		<hr style="border-color: black !important;">
 		<br>
 		<br>
+
+		@if($errors->any())
+			<div class="alert alert-danger alert-dismissible">
+			    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			    <strong>{{$errors->first()}}!</strong> Try again.
+		    </div>
+	    @endif
+
+		<form class="form-horizontal" action="/" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+			<div class="form-group">
+			    <label for="fullname" class="col-sm-3">Username:</label>
+			    <div class="col-sm-9">
+			    	<input type="text" class="form-control" id="username" name="username">
+			  	</div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="fullname" class="col-sm-3">Password:</label>
+			    <div class="col-sm-9	">
+			    	<input type="password" class="form-control" id="password" name="password">
+			  	</div>
+		  	</div>
+	        <button type="submit" class="btn btn-success btn-block" id="uploadIDs">Login</button>
+		</form>
 		<br>
-		<a href="/login" class="btn btn-danger btn-lg btn-block">Login Page</a>
-		<br>
-		<a href="/register" class="btn btn-danger btn-lg btn-block">Registration Page</a>
-		<br>
-		<a href="/patient-records" class="btn btn-danger btn-lg btn-block">Patient Records</a>
-		<br>
-		<a href="/queue" class="btn btn-danger btn-lg btn-block">Queueing System</a>
-		<br>
-		<a href="/patient-list" class="btn btn-danger btn-lg btn-block">Patient List</a>
+		<a href="/register" class="btn btn-danger btn-block">Create an Account</a>
 	</div>
+</div>
 @stop

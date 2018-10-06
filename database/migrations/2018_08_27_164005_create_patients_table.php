@@ -14,14 +14,16 @@ class CreatePatientsTable extends Migration
     public function up()
     {
         Schema::create('patients', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('patientID');
             $table->string('fullname');
-            $table->date('birthday');
-            $table->string('sex');
-            $table->string('address');
-            $table->string('civilstatus');
+            $table->date('birthday')->nullable();
+            $table->string('sex')->nullable();
+            $table->string('address')->nullable();
+            $table->string('civilstatus')->nullable();
             $table->string('username');
             $table->string('password');
+            $table->string('mobileNo');
+            $table->string('userType');
             $table->string('profpic')->nullable();
             $table->timestamps();
         });

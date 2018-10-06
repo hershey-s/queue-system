@@ -1,14 +1,12 @@
 @extends('layouts.mainlayout')
 @section('title')
-	Patient Registration
-@stop
-
-@section('nav-pane')
-	<a href="/" class="btn btn-warning btn-block">Back to Landing Page</a>
+	Registration Page
 @stop
 
 @section('content')
-	<div class="col-sm-12 well">
+	<div class="col-sm-3"></div>
+
+	<div class="col-sm-6 well">
 		<h1 style="text-align: center;">REGISTRATION PAGE</h1>
 		<hr style="border-color: black !important;">
 		<br>
@@ -39,7 +37,16 @@
 		  	<div class="form-group">
 			    <label for="address" class="col-sm-3">Address:</label>
 			    <div class="col-sm-9">
-			    	<input type="text" class="form-control" id="address" name="address">
+			    	<input type="text" class="form-control" id="address" name="address" required>
+			  	</div>
+		  	</div>
+		  	<div class="form-group">
+			    <label for="address" class="col-sm-3">Mobile Number:</label>
+			    <div class="col-sm-3">
+			    	<input type="text" class="form-control" readonly value="      +63      ">
+			  	</div>
+			  	<div class="col-sm-6">
+			    	<input type="text" class="form-control" id="mobileNo" name="mobileNo" placeholder="e.g. 9123456789" required>
 			  	</div>
 		  	</div>
 		  	<div class="form-group">
@@ -55,19 +62,19 @@
 	        <div class="form-group">
 			    <label for="fullname" class="col-sm-3">Username:</label>
 			    <div class="col-sm-9">
-			    	<input type="text" class="form-control" id="username" name="username">
+			    	<input type="text" class="form-control" id="username" name="username" required>
 			  	</div>
 		  	</div>
 		  	<div class="form-group">
 			    <label for="fullname" class="col-sm-3">Password:</label>
 			    <div class="col-sm-9">
-			    	<input type="password" class="form-control" id="password" name="password">
+			    	<input type="password" class="form-control" id="password" name="password" required>
 			  	</div>
 		  	</div>
-		  	<div class="form-group">
+		  	<!-- <div class="form-group">
 	            <label for="profpic" class="col-sm-3">Upload a Photo: (Optional)</label>
 	            <input class="file col-sm-9" type="file" id="profpic" name="profpic">
-	        </div>
+	        </div> -->
 	        <button type="submit" class="btn btn-success col-sm-7" id="uploadIDs">Register</button>
 	        <div class="col-sm-1"></div>
 	        <button type="reset" class="btn btn-danger col-sm-4">Reset</button>

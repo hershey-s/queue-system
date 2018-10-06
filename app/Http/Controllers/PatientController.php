@@ -14,14 +14,16 @@ class PatientController extends Controller
     	$p->sex = $r->sex;
     	$p->address = $r->address;
     	$p->civilstatus = $r->civilstatus;
+        $p->mobileNo = '63'.$r->mobileNo;
         $p->username = $r->username;
         $p->password = $r->password;
+        $p->userType = 'User';
     	$p->save();
-    	return back();
+    	return redirect('/');
     }
 
     public function view_patients() {
-        $patients = Patient::all();
+        $patients = Patient::where('userType', '!=', 'admin')->get();
         return view('/main.patient-list', compact('patients'));
     }
 }

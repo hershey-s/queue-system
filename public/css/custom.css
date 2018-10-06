@@ -11,17 +11,22 @@ body {
 }
 
 .middle {
-	right: 10px !important;
+
+}
+
+.profile {
+	right: 5px;
 }
 
 .main {
 	background-color: #E0E0E0;
 }
 
-li a .active{
-	background-color: #EF5350 !important;
+.ct a {
 	color: black !important;
 }
+
+
 .navbar {
 	width: 100% !important;
 	background-color: #E53935 !important;	
@@ -32,13 +37,15 @@ ul li a, .navbar-brand {
 }
 
 ul li a:hover, .navbar-brand:hover {
-	background-color: #EF9A9A !important;
+	background-color: red !important;
 	color: black !important;
+	font-weight: bold;
 }
 
 .logout {
+	top: 13px !important;
 	position: absolute !important;
-	right: 0 !important;
+	right: 10px !important;
 	float: right !important;
 	margin-right: 0 !important;
 }
@@ -55,8 +62,27 @@ ul li a:hover, .navbar-brand:hover {
 
 .patient tr:hover {
 	background-color: #EF9A9A !important;
+	font-weight: bold;
 }
 
 .checkup-sort {
 	padding-right: 10px !important;
+}
+
+
+
+.queue-modal {
+	display: none;
+}
+
+.records {
+	background-color: #EF9A9A !important;
+}
+
+li .active {
+	background-color: red;
+}
+
+.records li a {
+	color: black !important;
 }
