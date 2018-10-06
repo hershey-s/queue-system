@@ -12,14 +12,15 @@ Route::middleware('LoginCheck')->group(function() {
 	Route::get('/patient-records', 'PagesController@patient_record');
 	
 	Route::get('/queue', 'PagesController@queue');
-	Route::post('/queue', 'QueueController@add_queue');
+	Route::get('/add-to-queue', 'QueueController@add_queue');
 	Route::get('/logout', 'LoginController@logout');
 
 	Route::get('/sendSMS', 'QueueController@sendSMS');
-	
+
 	Route::middleware('AdminCheck')->group(function() {
 		Route::get('/admin-panel', 'PagesController@admin');
-		Route::get('/update-status/{item}', 'QueueController@update');
+		Route::get('/finish/{item}', 'QueueController@finish');
+		Route::post('/update-queue-details', 'QueueController@update_queue');
 		Route::get('/checkup-page', 'PagesController@checkup');
 		Route::post('/checkup-page', 'CheckupTypeController@add_checkupCategory');
 		Route::get('/doctors-list', 'PagesController@doctors');

@@ -14,22 +14,21 @@ class QueueController extends Controller
     public function add_queue(Request $r){
         $q = new Queue;
         $p = new Patient;
-    	$category = $r->category;
-        $tempID = Queue::where('checkupTypeID', $r->category)->get();
+        $tempID = Queue::where('checkupTypeID', $r->cID)->get();
     	$q->queueID = count($tempID) + 1;
-    	$q->patientID = $r->patientID;
-    	$q->patientName = $r->patientName;
+    	$q->patientID = $r->pID;
+    	$q->patientName = $r->pName;
     	$q->queueStatus = 'Ongoing';
-		$q->doctorInCharge = $r->doctor;
-		$q->checkupTypeID = $r->category;
-		$q->checkupDescription = $r->description;
+		$q->doctorInCharge = '';//$r->doctor;
+		$q->checkupTypeID = $r->cID;
+		$q->checkupDescription = '';//$r->description;
 		$q->save();
 		return redirect('/queue');
     }
 
-    public function update($item) {
+    public function finish($item) {
         $p = Patient::where('patientID', $item)->get();
-        DB::table('queues')->where('queueID', $item)->update(['queueStatus' => 'Finished']);
+        DB::table('queues')->where('id', $item)->update(['queueStatus' => 'Finished']);
         return redirect('/queue');
     }
 
@@ -38,6 +37,11 @@ class QueueController extends Controller
         $no = $p->mobileNo;
         $mes = 'You are now number ' .$r->pos.' in the queue for '.$r->cat;
         iText($no, $mes);
+        return back();
+    }
+
+    public function update_queue(Request $r) {
+        DB::table('queues')->where('id', $r->queueID)->update(['checkupDescription' => $r->desc, 'doctorInCharge' => $r->doc]);
         return back();
     }
 }
