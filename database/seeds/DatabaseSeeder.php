@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'password' => 'adminsuper',
             'userType' => 'admin',
-            'mobileNo' => '639090909090';
+            'mobileNo' => '639090909090',
             'created_at' => Carbon::now(),
         ]);
 
