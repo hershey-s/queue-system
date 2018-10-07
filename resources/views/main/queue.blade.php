@@ -36,9 +36,9 @@
 								<th>Patient Name</th>
 								<th>Checkup Description</th>
 								<th>Doctor-In-Charge</th>
-								<th>Action</th>	
+								<th>Save Details</th>	
 								<th>Send SMS</th>
-								<th width="1">Status</th>
+								<th width="1">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -46,10 +46,12 @@
 						@if( $queue->where('checkupTypeID', $c->checkupTypeID)->count() == 0)
 							<tr>
 								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td><a class="btn btn-primary btn-block">N/A</a></td>
+								<td>No Data Found</td>
+								<td>No Data Found</td>
+								<td>No Data Found</td>
+								<td><a class="btn btn-primary btn-block"><span class="glyphicon glyphicon-ok"></span>Save</a></td>
+								<td><a class="btn btn-success btn-block">NULL</a></td>
+								<td><a class="btn btn-warning btn-block"><span class="fa fa-remove"></span>NULLS</a></td>
 							</tr>
 						@else
 							@foreach($queue->where('checkupTypeID', $c->checkupTypeID) as $index => $q)
@@ -69,7 +71,7 @@
 										<td><button class="status btn btn-primary btn-block" href="javascript:void()">Save Changes</button></td>
 									</form>
 									<td><a href="/sendSMS?queue={{ $q->id }}&pos={{ $z }}&cat={{ $c->categoryName }}&id={{ $q->patientID }}" class="btn btn-success btn-block">Send SMS</a></td>
-									<td><a href="/finish/{{$q->queueID}}" class="btn btn-warning btn-block">Finish</a></td>
+									<td><a href="/finish/{{$q->id}}" class="btn btn-warning btn-block">Finish</a></td>
 								</tr>
 							@endforeach
 						@endif

@@ -26,7 +26,8 @@ class MasterRecordController extends Controller
     		$m->checkupDate = $q->created_at->toDateString();
     		$m->save();
     	}
-    	// $bb = DB::select('DELETE FROM master_records');
+
+    	DB::select('DELETE FROM queues');
 
     	return redirect('/master-record');	
     }

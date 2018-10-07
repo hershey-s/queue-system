@@ -46,7 +46,7 @@
 						@foreach($myRecords as $mr)
 						<tr>
 							<td>{{ $type->where('checkupTypeID', $mr->checkupTypeID)->first()->categoryName	 }}</td>
-							<td>{{ $mr->CheckupDescription }}</td>
+							<td>{{ $mr->checkupDescription }}</td>
 							<td>{{ $mr->doctorInCharge }}</td>
 							<td>{{ $mr->checkupDate }}</td>
 						</tr>
@@ -70,7 +70,7 @@
 							@foreach($myRecords->where('checkupTypeID', $type->checkupTypeID) as $mr)
 							<tr>
 								<td>{{ $type->categoryName }}</td>
-								<td>{{ $mr->CheckupDescription }}</td>
+								<td>{{ $mr->checkupDescription }}</td>
 								<td>{{ $mr->doctorInCharge }}</td>
 								<td>{{ $mr->checkupDate }}</td>
 							</tr>
