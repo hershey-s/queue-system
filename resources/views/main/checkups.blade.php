@@ -4,7 +4,8 @@
 @stop
 
 @section('content')
-	<div class="col-sm-12 well">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10 well">
 		<h1 style="text-align: center;">CHECKUP PAGE</h1>
 		<hr style="border-color: black !important;">
 		<div class="col-sm-4">
@@ -26,4 +27,5 @@
 		</form>
 		</div>
 	</div>
+	<div class="col-sm-1"></div>
 @stop

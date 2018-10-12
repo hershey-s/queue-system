@@ -8,11 +8,13 @@
 	<div class="col-sm-3"></div>
 
 	<div class="col-sm-6 well">
-		<h1 style="text-align: center;">LOGIN PAGE</h1>
-		<hr style="border-color: black !important;">
-		<br>
-		<br>
-
+		<div class="row">
+			<img src="/images/brand/logo.png" class="center-img">
+			<h1 style="text-align: center;">WELCOME! PLEASE LOGIN</h1>
+			<hr style="border-color: black !important;">
+			<br>
+			<br>
+		</div>
 		@if($errors->any())
 			<div class="alert alert-danger alert-dismissible">
 			    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

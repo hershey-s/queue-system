@@ -6,18 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/sticky-footer.css">
     <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/dataTables.tableTools.min.css">
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
-    <script type="text/javascript" src="/mains/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.datatables.min.js"></script>
     <script type="text/javascript" src="/js/queue.js"></script>
-    <!-- <script type="text/javascript" src="/js/alert.js"></script> -->
-    <!-- <script type="text/javascript" src="/js/spa.js"></script> -->
-    <script src="/js/actions.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default" role="navigation">

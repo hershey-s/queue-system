@@ -4,7 +4,8 @@
 @stop
 
 @section('content')
-	<div class="col-sm-12 well">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10 well">
 		<h1 style="text-align: center;">MASTER RECORD</h1>
 		<hr style="border-color: black !important;">
 		<br>
@@ -13,7 +14,6 @@
 			<thead>
 				<tr>
 					<td>Patient Name</td>
-					<td>Time Finished</td>
 					<td>Doctor In Charge</td>
 					<td>Checkup Name</td>
 					<td>Checkup Date</td>
@@ -23,7 +23,6 @@
 				@foreach($master as $m)
 				<tr>
 					<td>{{ $m->patientName }}</td>
-					<td>{{ $m->timeFinished }}</td>
 					<td>{{ $m->doctorInCharge }}</td>
 					<td>{{ $m->checkupDescription }}</td>
 					<td>{{ $m->checkupDate }} </td>
@@ -32,4 +31,5 @@
 			</tbody>
 		</table>
 	</div>
+	<div class="col-sm-1"></div>
 @stop

@@ -26,9 +26,8 @@ class QueueController extends Controller
 		return redirect('/queue');
     }
 
-    public function finish($item) {
-        $p = Patient::where('patientID', $item)->get();
-        DB::table('queues')->where('id', $item)->update(['queueStatus' => 'Finished']);
+    public function cancel($item) {
+        DB::select('DELETE FROM queues WHERE id = '.$item);
         return redirect('/queue');
     }
 

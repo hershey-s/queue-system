@@ -4,7 +4,8 @@
 @stop
 
 @section('content')
-	<div class="col-sm-12 well">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10 well">
 		<h1 style="text-align: center;">PATIENT LIST</h1>
 		<hr style="border-color: black !important;">
 		<br>
@@ -34,4 +35,5 @@
 			</tbody>
 		</table>
 	</div>
+	<div class="col-sm-1"></div>
 @stop

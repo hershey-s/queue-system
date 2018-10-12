@@ -19,14 +19,14 @@ Route::middleware('LoginCheck')->group(function() {
 
 	Route::middleware('AdminCheck')->group(function() {
 		Route::get('/admin-panel', 'PagesController@admin');
-		Route::get('/finish/{item}', 'QueueController@finish');
+		Route::get('/finish/{item}', 'MasterRecordController@finish');
+		Route::get('/cancel/{item}', 'QueueController@cancel');
 		Route::post('/update-queue-details', 'QueueController@update_queue');
 		Route::get('/checkup-page', 'PagesController@checkup');
 		Route::post('/checkup-page', 'CheckupTypeController@add_checkupCategory');
 		Route::get('/doctors-list', 'PagesController@doctors');
 		Route::get('/master-record', 'PagesController@master_list');
 		Route::get('/patient-list', 'PatientController@view_patients');
-		Route::get('/compile-records', 'MasterRecordController@compile');
 		Route::get('/sessions', function() {
 			return session()->all();
 		});
