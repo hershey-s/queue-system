@@ -21,7 +21,7 @@ function sendSMS($mobNum, $pos){
 
 function iText($no,$mes){
 	$ch = curl_init();
-	$itexmo = array('1' => $no, '2' => $mes, '3' => 'TR-MIKEJ870637_7EDCM');
+	$itexmo = array('1' => '63'.$no, '2' => $mes, '3' => 'TR-MIKEJ870637_7EDCM');
 	curl_setopt($ch, CURLOPT_URL,"https://www.itexmo.com/php_api/api.php");
 	curl_setopt($ch, CURLOPT_POST, 1);
 	 curl_setopt($ch, CURLOPT_POSTFIELDS, 

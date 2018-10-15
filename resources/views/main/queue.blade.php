@@ -66,10 +66,10 @@
 											</td>
 											<td><input class="form-control" type="text" name="doc" value="{{ $q->doctorInCharge }}"></td>
 											<td class="text-center">
-												<button class="status btn btn-warning" href="javascript:void()">Save Details</button>
-												<a href="/sendSMS?queue={{ $q->id }}&pos={{ $z }}&cat={{ $c->categoryName }}&id={{ $q->patientID }}" class="btn btn-primary">Send SMS</a>
-										    	<a href="/finish/{{$q->id}}" class="btn btn-success">Finish</a>
-										    	<a href="/cancel/{{$q->id}}" class="btn btn-danger">Cancel</a>
+												<button class="status btn btn-warning" href="javascript:void()"><i class="fas fa-save"></i> Save Details</button>
+												<a href="/sendSMS?queue={{ $q->id }}&pos={{ $z }}&cat={{ $c->categoryName }}&id={{ $q->patientID }}" class="btn btn-primary"><i class="fas fa-envelope"></i> Send</a>
+										    	<a href="/finish/{{$q->id}}" class="btn btn-success"><i class="fas fa-user-check"></i> Finish</a>
+										    	<a href="/cancel/{{$q->id}}" class="btn btn-danger"><i class="fas fa-user-times"></i> Cancel</a>
 											</td>
 										</form>
 									</tr>
@@ -92,7 +92,7 @@
 
 			<div class="col-sm-{{$x}} well">
 				<h3 style="text-align: center;">{{ $c->categoryName }}</h3>
-				<a href="/add-to-queue?pID={{session('id')}}&pName={{session('fullName')}}&cID={{$c->checkupTypeID}}" class="btn btn-success btn-block">Join Queue</a>
+				<a href="/add-to-queue?pID={{session('id')}}&pName={{session('fullName')}}&cID={{$c->checkupTypeID}}" class="btn btn-success btn-block"><i class="fas fa-check-circle"></i> Join Queue</a>
 				<hr style="border-color: black !important;">
 				<br>
 				<table class="table table-hover table-bordered patient">

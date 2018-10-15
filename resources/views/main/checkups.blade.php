@@ -23,7 +23,7 @@
 			    	<input type="text" class="form-control" id="categoryName" name="categoryName">
 			  	</div>
 		  	</div>
-	        <button type="submit" class="btn btn-success btn-block" id="uploadIDs">SAVE</button>
+	        <button type="submit" class="btn btn-success btn-block" id="uploadIDs"><i class="fas fa-save"></i> SAVE</button>
 		</form>
 		</div>
 	</div>

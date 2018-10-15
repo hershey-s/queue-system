@@ -36,10 +36,10 @@
 			    	<input type="password" class="form-control" id="password" name="password">
 			  	</div>
 		  	</div>
-	        <button type="submit" class="btn btn-success btn-block" id="uploadIDs">Login</button>
+	        <button type="submit" class="btn btn-success btn-block" id="uploadIDs"><i class="fas fa-sign-in-alt"></i> Login</button>
 		</form>
 		<br>
-		<a href="/register" class="btn btn-danger btn-block">Create an Account</a>
+		<a href="/register" class="btn btn-danger btn-block"><i class="fas fa-user-plus"></i> Create an Account</a>
 	</div>
 </div>
 @stop

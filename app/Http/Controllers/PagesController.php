@@ -35,9 +35,19 @@ class PagesController extends Controller
     }
 
     public function patient_record() {
+        $patient = Patient::where('patientID', session('id'))->first();
         $categories = CheckupType::all();
         $myRecords = MasterRecord::where('patientID', session('id'))->get();
-        return view('/main.patient-records', compact('myRecords', 'categories'));
+        return view('/main.patient-records', compact('myRecords', 'categories', 'patient'));
+    }
+
+    public function edit_profile() {
+        $patient = Patient::where('patientID', session('id'))->first();
+        return view('/main.edit-profile', compact('patient'));
+    }
+
+    public function change_password() {
+        return view('/main.change-password');
     }
 
     public function queue() {

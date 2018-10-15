@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         DB::table('patients')->insert([
             'fullname' => 'Administrator',
             'username' => 'admin',
-            'password' => 'adminsuper',
+            'password' => '4afb061e6ffdad1cd8abcd38990fd2b5',
             'userType' => 'admin',
             'mobileNo' => '639090909090',
             'created_at' => Carbon::now(),

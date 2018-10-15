@@ -10,7 +10,7 @@ class LoginController extends Controller
     public function login(Request $r) {
     	$p = new Patient;
     	$uname = $r->username;
-    	$pword = $r->password;
+        $pword = md5(hash('sha512', $r->password).hash('ripemd160', $r->password));
     	$patient = $p->where('username', $uname)->where('password', $pword)->first();
     	
     	if($patient) {

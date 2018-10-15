@@ -13,12 +13,13 @@
 		<table class="table table-hover table-bordered patient">
 			<thead>
 				<tr>
-					<td>ID</td>
-					<td>Full Name</td>
-					<td>Birthday</td>
-					<td>Sex</td>
-					<td>Address</td>
-					<td>Civil Status</td>
+					<th>ID</th>
+					<th>Full Name</th>
+					<th>Birthday</th>
+					<th>Sex</th>
+					<th>Address</th>
+					<th>Mobile Number</th>
+					<th>Civil Status</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,8 +28,9 @@
 					<td>{{ $p->patientID }}</td>
 					<td>{{ $p->fullname }}</td>
 					<td>{{ $p->birthday }}</td>
-					<td>{{ $p->sex }}</td>
+					<td><i class="fas fa-{{ $p->sex == 'Male' ? 'mars' : 'venus' }}"></i> {{ $p->sex }}</td>
 					<td>{{ $p->address }}</td>
+					<td>{{ $p->mobileNo }}</td>
 					<td>{{ $p->civilstatus }}</td>
 				</tr>
 				@endforeach

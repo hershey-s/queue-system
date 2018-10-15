@@ -1,5 +1,5 @@
 html * {
-	font-family: "Verdana" !important;
+	font-family: "Verdana";
 }
 
 body {
@@ -40,14 +40,6 @@ ul li a:hover, .navbar-brand:hover {
 	background-color: red !important;
 	color: black !important;
 	font-weight: bold;
-}
-
-.logout {
-	top: 13px !important;
-	position: absolute !important;
-	right: 10px !important;
-	float: right !important;
-	margin-right: 0 !important;
 }
 
 .patient {
@@ -93,4 +85,17 @@ li .active a {
   background-color: #ff1744 !important;
   border: 1px solid #888888;
   font-weight: bold;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+	background-color: #ff1744 !important;
+}
+
+.dropdown-menu {
+	background-color: #ff1744 !important;
+}
+
+.dropdown-menu>li>a:hover {
+	background-color: white !important;
+	color: black !important;
 }

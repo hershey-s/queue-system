@@ -6,13 +6,13 @@
 @section('content')
 	<div class="col-sm-3 well profile">
 		<div class="col-sm-12">
-			<h2>{{ session('fullName') }}</h2>
+			<h2>{{ $patient->fullname }}</h2>
 			<hr style="border-color: black !important;">
-			<h5>{{ session('bday') }}</h5>
-			<h5>{{ session('sex') }}</h5>
-			<h5>{{ session('address') }}</h5>
-			<h6>&nbsp;</h6>
-			<a href="/queue" class="btn btn-success btn-block">Join a Queue</a>
+			<h5>Birthday: {{ $patient->birthday }}</h5>
+			<h5>Gender: {{ $patient->sex }}</h5>
+			<h5>Address: {{ $patient->address }}</h5>
+			<hr style="border-color: black !important;">
+			<a href="/queue" class="btn btn-success btn-block"><i class="fas fa-bars"></i> Join a Queue</a>
 		</div>
 		<h6>&nbsp;</h6>
 	</div>
