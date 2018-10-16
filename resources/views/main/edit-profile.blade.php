@@ -1,6 +1,6 @@
 @extends('layouts.mainlayout')
 @section('title')
-	Change Password
+	Edit Profile
 @stop
 
 @section('content')
@@ -57,7 +57,7 @@
 			    	</select>
 			  	</div>
 		  	</div>
-	        <button type="submit" class="btn btn-success col-sm-5" id="up_profile"><i class="fas fa-save"></i> Change Password</button>
+	        <button type="submit" class="btn btn-success col-sm-5" id="up_profile"><i class="fas fa-save"></i> Update Profile</button>
 	        <i class="col-sm-2"></i>
 	        <a class="btn btn-danger col-sm-5" href="{{ session('userType') == 'admin' ? '/admin-panel' : '/patient-records' }}"><i class="fas fa-undo-alt"></i> Back to Profile</a>
 		</form>
