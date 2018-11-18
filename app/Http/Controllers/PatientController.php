@@ -21,7 +21,7 @@ class PatientController extends Controller
         $p->password = $pword;
         $p->userType = 'User';
     	$p->save();
-    	return redirect('/');
+    	return redirect('/admin-panel');
     }
 
     public function view_patients() {

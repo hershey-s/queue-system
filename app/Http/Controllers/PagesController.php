@@ -7,7 +7,9 @@ use App\CheckupType;
 use App\Doctor;
 use App\MasterRecord;
 use App\Patient;
+use App\Office;
 use App\Queue;
+use DB;
 
 class PagesController extends Controller
 {
@@ -51,15 +53,38 @@ class PagesController extends Controller
     }
 
     public function queue() {
+        $activeTab = 1;
         $category = CheckupType::all();
         $queue = Queue::where('queueStatus', 'Ongoing')->get();
         $doctors = Doctor::all();
         $patient = Patient::where('PatientID', session('id'))->first();
-        return view('/main.queue', compact('category', 'queue', 'doctors', 'patient'));
+        return view('/main.queue', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
+    }
+
+    public function queue_details() {
+        $queue = Queue::all();
+        return view('/main.queue-details', compact('queue'));
+    }
+
+    public function realtime_queue(Request $r) {
+        $activeTab = $r->activeTab;
+        // return $r;
+        // return 'kahit ano';
+        $category = CheckupType::all();
+        $queue = Queue::where('queueStatus', 'Ongoing')->get();
+        $doctors = Doctor::all();
+        $patient = Patient::where('PatientID', session('id'))->first();
+        return view('/layout.realtime', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
     }
 
     public function admin() {
-        return view('/main.admin-panel');
+        $status = Office::where('id', 1)->first();
+        return view('/main.admin-panel', compact('status'));
+    }
+
+    public function status(Request $r) {
+        DB::table('offices')->where('id', 1)->update(['status_1' => $r->officeStatus]);
+        return redirect('/admin-panel');
     }
 
     public function register() {

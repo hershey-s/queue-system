@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use App\Patient;
 use App\CheckupType;
+use App\Office;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,7 +18,7 @@ class DatabaseSeeder extends Seeder
         DB::table('patients')->insert([
             'fullname' => 'Administrator',
             'username' => 'admin',
-            'password' => '4afb061e6ffdad1cd8abcd38990fd2b5',
+            'password' => '2db9c6f4392635ae17a4be406ec7cb7a',
             'userType' => 'admin',
             'mobileNo' => '639090909090',
             'created_at' => Carbon::now(),
@@ -39,6 +40,11 @@ class DatabaseSeeder extends Seeder
             'categoryName' => 'Vaccines',
             'url' => 'vaccines',
             'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('offices')->insert([
+        	'status_1' => 'Closed',
+        	'created_at' => Carbona::now(),
         ]);
 	}
 }

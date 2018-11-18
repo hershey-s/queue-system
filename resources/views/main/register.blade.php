@@ -7,7 +7,7 @@
 	<div class="col-sm-3"></div>
 
 	<div class="col-sm-6 well">
-		<h1 style="text-align: center;">REGISTRATION PAGE</h1>
+		<h1 style="text-align: center;">PATIENT REGISTRATION</h1>
 		<hr style="border-color: black !important;">
 		<br>
 		<br>
@@ -42,12 +42,12 @@
 		  	</div>
 		  	<div class="form-group">
 			    <label for="address" class="col-sm-3">Mobile Number:</label>
-			    <div class="col-sm-3">
-			    	<input type="text" class="form-control" readonly value="      +63      ">
-			  	</div>
-			  	<div class="col-sm-6">
-			    	<input type="text" class="form-control" id="mobileNo" name="mobileNo" placeholder="e.g. 9123456789" required>
-			  	</div>
+				<div class="col-sm-9">
+					<div class="input-group">
+					  	<span class="input-group-addon" id="noPrefix">+63</span>
+					  	<input type="text" class="form-control" id="mobileNo" name="mobileNo" placeholder="e.g. 9123456789" aria-describedby="noPrefix" required>
+					</div>
+				</div>
 		  	</div>
 		  	<div class="form-group">
 			    <label for="civilstatus" class="col-sm-3">Civil Status:</label>

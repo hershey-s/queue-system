@@ -1,4 +1,4 @@
-@extends('layouts.mainlayout')
+	@extends('layouts.mainlayout')
 @section('title')
 	Queueing System
 @stop
@@ -10,7 +10,8 @@
 	<div class="col-sm-6 well">
 		<div class="row">
 			<img src="/images/brand/logo.png" class="center-img">
-			<h1 style="text-align: center;">WELCOME! PLEASE LOGIN</h1>
+			<h1 style="text-align: center;">Dagupan City Health Office</h1>
+			<h1 style="text-align: center;">Management and Queueing System</h1>
 			<hr style="border-color: black !important;">
 			<br>
 			<br>
@@ -38,8 +39,6 @@
 		  	</div>
 	        <button type="submit" class="btn btn-success btn-block" id="uploadIDs"><i class="fas fa-sign-in-alt"></i> Login</button>
 		</form>
-		<br>
-		<a href="/register" class="btn btn-danger btn-block"><i class="fas fa-user-plus"></i> Create an Account</a>
 	</div>
 </div>
 @stop

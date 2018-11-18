@@ -1,10 +1,10 @@
 <?php
 
-function sendSMS($mobNum, $pos){
+function sendSMS($mobNum, $mes){
     $ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, "https://rest.nexmo.com/sms/json");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, "api_key=20aa8dbe&api_secret=gsrHhUy70vG0MS0y&to=639219870637&from=\"PREVIOUSMO\"&text=\"NASEND KO NA!");
+	curl_setopt($ch, CURLOPT_POSTFIELDS, "api_key=20aa8dbe&api_secret=gsrHhUy70vG0MS0y&to=63".$mobNum."&from=\"PREVIOUSMO\"&text=\"$mes.");
 	curl_setopt($ch, CURLOPT_POST, 1);
 
 	$headers = array();
@@ -16,7 +16,7 @@ function sendSMS($mobNum, $pos){
 	    echo 'Error:' . curl_error($ch);
 	}
 	curl_close ($ch);
-	return 'NASEND KO NA';
+	return 'Done';
 }
 
 function iText($no,$mes){

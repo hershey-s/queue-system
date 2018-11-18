@@ -50,6 +50,8 @@
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/jquery.datatables.min.js"></script>
+    <script type="text/javascript" src="/axios-master/dist/axios.min.js"></script>
     <script type="text/javascript" src="/js/queue.js"></script>
+
 </body>
 </html>

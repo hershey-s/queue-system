@@ -44,7 +44,10 @@ ul li a:hover, .navbar-brand:hover {
 
 .patient {
 	background-color: white !important;
+	table-layout: auto !important;
 }
+
+
 
 .patient thead {
 	background-color: #ff1744 !important;
@@ -54,7 +57,34 @@ ul li a:hover, .navbar-brand:hover {
 
 .patient tr:hover {
 	background-color: #EF9A9A !important;
-	font-weight: bold;
+	font-weight: normal;
+}
+
+.patient tr th:last-child {
+	white-space: nowrap;
+	width: 35%;
+	align-content: center; 
+}
+
+.scroll {
+	height: 360px;
+	overflow-y: scroll;
+}
+
+.details {
+	table-layout: auto !important;
+}
+
+.details tr th {
+	width: 30%;
+}
+
+.details tr th:first-child {
+	width: 5%;
+}
+
+.details tr th:last-child {
+	width: 10%;
 }
 
 .checkup-sort {
@@ -98,4 +128,28 @@ li .active a {
 .dropdown-menu>li>a:hover {
 	background-color: white !important;
 	color: black !important;
+}
+
+#noPrefix {
+	background-color: #d9534f !important;
+	border-color: #d43f3a !important;
+	color: white;
+	border-radius: 6px 0px 0px 6px !important; 
+}
+
+.opened {
+	background-color: #5cb85c !important;
+	border-color: #4cae4c !important;
+	color: white;
+}
+
+.closed {
+	background-color: #f0ad4e !important;
+	border-color: #eea236 !important;
+	color: white;
+}
+
+#officeStatus option {
+	background-color: white !important;
+	color: black;
 }

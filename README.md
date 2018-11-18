@@ -1,11 +1,13 @@
 # queue-system
 Login Page layout: Done.
 SMS Function: Done.
-Checkups: Added Checkup Category table. Mag add din ba ng table for individual checkup procedures?
-Registration Page: Done with function.
-Queue System: Done. Needs more improvement though.
+Checkups: Added Checkup Category table.
+Queue System: Done. Done. Realtime updates.
 Patient List: Done. Also added list of doctors for easier sorting of records.
-Master Record List: Currently on it. Will do alongside Queue System.
+Master Record List: Done.
+Patient Record: Done.
 
-
-Patient Record: On it.
+PATIENT REGISTRATION - ADMIN ONLY
+ADDED COMPANY NAME ON LOGIN
+CANNOT GO TO QUEUE IF CLINIC IS CLOSED
+DONE SEPARATING DETAILS AND QUEUEING SYSTEM

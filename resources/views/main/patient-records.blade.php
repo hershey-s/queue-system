@@ -4,6 +4,12 @@
 @stop
 
 @section('content')
+	@if($errors->any())
+		<div class="alert alert-danger alert-dismissible">
+		    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		    <h1><strong>{{$errors->first()}}!</strong> Try again tomorrow.</h1>
+	    </div>
+    @endif
 	<div class="col-sm-3 well profile">
 		<div class="col-sm-12">
 			<h2>{{ $patient->fullname }}</h2>

@@ -34,8 +34,9 @@ class QueueController extends Controller
     public function sendSMS(Request $r) {
         $p = Patient::where('patientID', $r->id)->first();
         $no = $p->mobileNo;
-        $mes = 'You are now number ' .$r->pos.' in the queue for '.$r->cat;
-        iText($no, $mes);
+        $mes = '#' .$r->num.', you are in position '.$r->pos;
+        // iText($no, $mes);
+        sendSMS($no, $mes);
         return back();
     }
 

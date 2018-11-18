@@ -59,5 +59,6 @@ class Kernel extends HttpKernel
         'LoginCheck' => \App\Http\Middleware\LoginCheck::class,
         'WhenLoggedIn' => \App\Http\Middleware\WhenLoggedIn::class,
         'AdminCheck' => \App\Http\Middleware\AdminCheck::class,
+        'CloseOpen' => \App\Http\Middleware\CloseOpen::class,
     ];
 }
