@@ -4,7 +4,7 @@ function sendSMS($mobNum, $mes){
     $ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, "https://rest.nexmo.com/sms/json");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, "api_key=20aa8dbe&api_secret=gsrHhUy70vG0MS0y&to=63".$mobNum."&from=\"PREVIOUSMO\"&text=\"$mes.");
+	curl_setopt($ch, CURLOPT_POSTFIELDS, "api_key=20aa8dbe&api_secret=gsrHhUy70vG0MS0y&to=63".$mobNum."&from=\"Admin\"&text=$mes.");
 	curl_setopt($ch, CURLOPT_POST, 1);
 
 	$headers = array();

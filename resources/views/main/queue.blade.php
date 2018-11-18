@@ -66,7 +66,7 @@
 								@endphp
 
 								<tr>
-									<td>{{ $q->id }}</td>
+									<td>{{ $z }}</td>
 									<td>{{ $q->patientName }}</td>
 									<td><span class="status btn btn-primary btn-block" href="javascript:void()">{{ $q->queueStatus }}</span></td>
 								</tr>
