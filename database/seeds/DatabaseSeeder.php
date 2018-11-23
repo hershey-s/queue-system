@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('offices')->insert([
         	'status_1' => 'Closed',
-        	'created_at' => Carbona::now(),
+        	'created_at' => Carbon::now(),
         ]);
 	}
 }
