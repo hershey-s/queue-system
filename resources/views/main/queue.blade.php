@@ -43,7 +43,7 @@
 				<hr style="border-color: black !important;">
 				<br>
 				<div class="scroll">
-					<table class="table table-hover table-bordered patient">
+					<table class="table table-hover table-bordered queue">
 						<thead>
 							<tr>
 								<th width="1">#</th>
@@ -66,7 +66,7 @@
 								@endphp
 
 								<tr>
-									<td>{{ $z }}</td>
+									<td>{{ $q->id }}</td>
 									<td>{{ $q->patientName }}</td>
 									<td><span class="status btn btn-primary btn-block" href="javascript:void()">{{ $q->queueStatus }}</span></td>
 								</tr>

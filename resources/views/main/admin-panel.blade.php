@@ -41,7 +41,7 @@
 				<br>
 				<a href="/patient-list" class="btn btn-danger btn-lg btn-block"><i class="fas fa-users"></i> Patient List</a>
 				<br>
-				<a href="/master-record" class="btn btn-danger btn-lg btn-block"><i class="fas fa-list-alt"></i> Master List</a>
+				<a href="/master-record" class="btn btn-danger btn-lg btn-block"><i class="fas fa-list-alt"></i> Master Record</a>
 				<br>
 				<a href="/register" class="btn btn-danger btn-lg btn-block"><i class="fas fa-user-plus"></i> Register New Patient</a>
 			</div>

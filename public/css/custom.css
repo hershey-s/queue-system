@@ -62,7 +62,7 @@ ul li a:hover, .navbar-brand:hover {
 
 .patient tr th:last-child {
 	white-space: nowrap;
-	width: 35%;
+	width: 15%;
 	align-content: center; 
 }
 
@@ -93,6 +93,15 @@ ul li a:hover, .navbar-brand:hover {
 
 .queue-modal {
 	display: none;
+}
+
+.queue {
+	table-layout: auto !important;
+}
+
+.queue thead tr th:last-child {
+	width: 35% !important;
+	text-align: center;
 }
 
 .records, .queues {

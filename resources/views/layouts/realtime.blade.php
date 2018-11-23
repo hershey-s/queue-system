@@ -9,7 +9,7 @@
 		@endphp
 			<div id="menu{{$c->checkupTypeID}}" class="tab-pane fade {{ ($c->checkupTypeID == $activeTab) ? 'in active' : '' }}">
 				<h3>{{ $c->categoryName }}</h3>
-				<table class="table table-hover table-bordered patient">
+				<table class="table table-hover table-bordered queue">
 					<thead>
 						@if( $queue->where('checkupTypeID', $c->checkupTypeID)->count() == 0)
 							<tr>

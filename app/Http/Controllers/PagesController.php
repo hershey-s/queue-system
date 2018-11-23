@@ -55,7 +55,7 @@ class PagesController extends Controller
     public function queue() {
         $activeTab = 1;
         $category = CheckupType::all();
-        $queue = Queue::where('queueStatus', 'Ongoing')->get();
+        $queue = Queue::all();
         $doctors = Doctor::all();
         $patient = Patient::where('PatientID', session('id'))->first();
         return view('/main.queue', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
@@ -71,10 +71,10 @@ class PagesController extends Controller
         // return $r;
         // return 'kahit ano';
         $category = CheckupType::all();
-        $queue = Queue::where('queueStatus', 'Ongoing')->get();
+        $queue = Queue::all();
         $doctors = Doctor::all();
         $patient = Patient::where('PatientID', session('id'))->first();
-        return view('/layout.realtime', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
+        return view('/layouts.realtime', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
     }
 
     public function admin() {

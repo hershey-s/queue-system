@@ -75,10 +75,8 @@
 	            <label for="profpic" class="col-sm-3">Upload a Photo: (Optional)</label>
 	            <input class="file col-sm-9" type="file" id="profpic" name="profpic">
 	        </div> -->
-	        <button type="submit" class="btn btn-success btn-block" id="uploadIDs"><i class="fas fa-save"></i> Register</button>
-	        <br>
+	        <button type="submit" class="btn btn-success col-sm-6" id="uploadIDs"><i class="fas fa-save"></i> Register</button>
 	        <button type="reset" class="btn btn-danger col-sm-6"><i class="fas fa-undo-alt"></i> Reset</button>
-	        <a class="btn btn-primary col-sm-6" href="/"><i class="fas fa-arrow-circle-left"></i> Back to Login</a>
 		</form>
 	</div>
 @stop

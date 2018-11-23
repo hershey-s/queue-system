@@ -18,12 +18,12 @@ class QueueController extends Controller
     	$q->queueID = count($tempID) + 1;
     	$q->patientID = $r->pID;
     	$q->patientName = $r->pName;
-    	$q->queueStatus = 'Ongoing';
+    	$q->queueStatus = 'On Queue';
 		$q->doctorInCharge = '';//$r->doctor;
 		$q->checkupTypeID = $r->cID;
 		$q->checkupDescription = '';//$r->description;
 		$q->save();
-		return redirect('/queue');
+		return back();
     }
 
     public function cancel($item) {

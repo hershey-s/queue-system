@@ -30,7 +30,7 @@
 					<td>{{ $p->birthday }}</td>
 					<td><i class="fas fa-{{ $p->sex == 'Male' ? 'mars' : 'venus' }}"></i> {{ $p->sex }}</td>
 					<td>{{ $p->address }}</td>
-					<td>{{ $p->mobileNo }}</td>
+					<td>0{{ $p->mobileNo }}</td>
 					<td>{{ $p->civilstatus }}</td>
 				</tr>
 				@endforeach
