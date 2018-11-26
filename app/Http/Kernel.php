@@ -60,5 +60,6 @@ class Kernel extends HttpKernel
         'WhenLoggedIn' => \App\Http\Middleware\WhenLoggedIn::class,
         'AdminCheck' => \App\Http\Middleware\AdminCheck::class,
         'CloseOpen' => \App\Http\Middleware\CloseOpen::class,
+        'PatientOnly' => \App\Http\Middleware\patientOnly::class,
     ];
 }

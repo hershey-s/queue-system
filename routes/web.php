@@ -5,7 +5,7 @@ Route::post('/', 'LoginController@login')->middleware('WhenLoggedIn'); //Login
 
 Route::middleware('LoginCheck')->group(function() {
 
-	Route::get('/patient-records', 'PagesController@patient_record');
+	Route::get('/patient-records', 'PagesController@patient_record')->middleware('PatientOnly');
 	Route::get('/edit-profile', 'PagesController@edit_profile');
 	Route::post('/edit-profile', 'PatientController@update_profile');
 	Route::get('/change-password', 'PagesController@change_password');
