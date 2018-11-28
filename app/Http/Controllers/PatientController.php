@@ -59,4 +59,9 @@ class PatientController extends Controller
             return view('/main.change-password')->with('errMsg', $msg)->with('class', $class);
         }
     }
+
+    public function tester($item) {
+        DB::select('DELETE FROM patients WHERE patientID = '.$item);
+        return back('/patient-list');
+    }
 }

@@ -62,7 +62,7 @@ ul li a:hover, .navbar-brand:hover {
 
 .patient tr th:last-child {
 	white-space: nowrap;
-	width: 15%;
+	width: 10%;
 	align-content: center; 
 }
 
@@ -161,4 +161,8 @@ li .active a {
 #officeStatus option {
 	background-color: white !important;
 	color: black;
+}
+
+#editModal {
+	top: 50px;
 }

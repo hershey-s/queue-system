@@ -32,51 +32,9 @@
 	</div>
 
 	@else
-		@foreach($category as $c)
-			@php
-				$z = 0;
-			@endphp
-
-			<div class="col-sm-{{$x}} well queue">
-				<h3 style="text-align: center;">{{ $c->categoryName }}</h3>
-				<a href="/add-to-queue?pID={{session('id')}}&pName={{session('fullName')}}&cID={{$c->checkupTypeID}}" class="btn btn-success btn-block"><i class="fas fa-check-circle"></i> Join Queue</a>
-				<hr style="border-color: black !important;">
-				<br>
-				<div class="scroll">
-					<table class="table table-hover table-bordered queue">
-						<thead>
-							<tr>
-								<th width="1">#</th>
-								<th>Patient Name</th>
-								<th width="1">Status</th>
-							</tr>
-						</thead>
-						<tbody>
-
-						@if( $queue->where('checkupTypeID', $c->checkupTypeID)->count() == 0)
-							<tr>
-								<td></td>
-								<td>No Data</td>
-								<td><a class="btn btn-primary btn-block">N/A</a></td>
-							</tr>
-						@else
-							@foreach($queue->where('checkupTypeID', $c->checkupTypeID) as $index => $q)
-								@php
-									$z += 1;
-								@endphp
-
-								<tr>
-									<td>{{ $q->id }}</td>
-									<td>{{ $q->patientName }}</td>
-									<td><span class="status btn btn-primary btn-block" href="javascript:void()">{{ $q->queueStatus }}</span></td>
-								</tr>
-							@endforeach
-						@endif
-						</tbody>
-					</table>
-				</div>
-			</div>
-		@endforeach
+		<div class="client">
+			@include('layouts.client-realtime')
+		</div>
 	@endif
 
 		<!-- <div class="col-sm-12">

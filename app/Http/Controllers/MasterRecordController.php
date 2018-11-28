@@ -11,25 +11,9 @@ use DB;
 
 class MasterRecordController extends Controller
 {
-    public function compile() {
-    	$queue = Queue::where('queueStatus', 'Finished')->get();
-    	$count = count($queue);
-    	foreach($queue as $q) {
-    		$m = new MasterRecord;
-    		$m->patientID = $q->patientID;
-    		$m->patientName = $q->patientName;
-    		$m->queueStatus = $m->queueStatus;
-    		$m->timeFinished = $q->timeFinished;
-    		$m->doctorInCharge = $q->doctorInCharge;
-    		$m->checkupTypeID = $q->checkupTypeID;
-    		$m->checkupDescription = $q->checkupDescription;
-    		$m->checkupDate = $q->created_at->toDateString();
-    		$m->save();
-    	}
-
-    	DB::select('DELETE FROM queues');
-
-    	return redirect('/master-record');	
+    public function master_update(Request $r) {
+        DB::table('master_records')->where('masterID', $r->updateID)->update(['patientName' => $r->editName, 'doctorInCharge' => $r->editDoc, 'checkupDescription' => $r->editCheckup, 'checkupDate' => $r->editDate]);
+        return back();
     }
 
     public function finish($item) {

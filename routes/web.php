@@ -14,10 +14,10 @@ Route::middleware('LoginCheck')->group(function() {
 	Route::get('/add-to-queue', 'QueueController@add_queue');
 	Route::get('/logout', 'LoginController@logout');
 	Route::post('/realtime-queue', 'PagesController@realtime_queue');
+	Route::get('/client-realtime', 'PagesController@client_realtime');
 
 	//Admin Pages
 	Route::middleware('AdminCheck')->group(function() {
-		Route::get('/register', 'PagesController@register');
 		Route::post('/register', 'PatientController@add_patient');
 		Route::get('/admin-panel', 'PagesController@admin');
 		Route::post('/admin-panel',	'PagesController@status');
@@ -29,7 +29,10 @@ Route::middleware('LoginCheck')->group(function() {
 		Route::post('/checkup-page', 'CheckupTypeController@add_checkupCategory');
 		Route::get('/doctors-list', 'PagesController@doctors');
 		Route::get('/master-record', 'PagesController@master_list');
+		Route::post('/master-record', 'MasterRecordController@master_update');
 		Route::get('/patient-list', 'PatientController@view_patients');
+		Route::get('/register', 'PagesController@register');
+		Route::get('/delete-patient/{item}', 'PatientController@tester');
 		Route::get('/sendSMS', 'QueueController@sendSMS');
 		Route::get('/sessions', function() {
 			return session()->all();

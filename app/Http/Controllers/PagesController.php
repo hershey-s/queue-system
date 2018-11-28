@@ -68,13 +68,20 @@ class PagesController extends Controller
 
     public function realtime_queue(Request $r) {
         $activeTab = $r->activeTab;
-        // return $r;
-        // return 'kahit ano';
         $category = CheckupType::all();
         $queue = Queue::all();
         $doctors = Doctor::all();
         $patient = Patient::where('PatientID', session('id'))->first();
         return view('/layouts.realtime', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
+    }
+
+    public function client_realtime() {
+        // return 1;
+        $category = CheckupType::all();
+        $queue = Queue::all();
+        $doctors = Doctor::all();
+        $patient = Patient::where('PatientID', session('id'))->first();
+        return view('/layouts.client-realtime', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
     }
 
     public function admin() {
