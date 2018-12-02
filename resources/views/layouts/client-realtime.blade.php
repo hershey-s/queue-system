@@ -6,7 +6,7 @@
 	<div class="col-sm-{{$x}} well queueTable">
 		<h3 style="text-align: center;">{{ $c->categoryName }}</h3>
 		@if(session('userType') != 'admin')
-			<a href="/add-to-queue?pID={{session('id')}}&pName={{session('fullName')}}&cID={{$c->checkupTypeID}}" class="btn btn-success btn-block"><i class="fas fa-check-circle"></i> Join Queue</a>
+			<a href="/add-to-queue?pID={{session('id')}}&pName={{$patient->fullname}}&cID={{$c->checkupTypeID}}" class="btn btn-success btn-block"><i class="fas fa-check-circle"></i> Join Queue</a>
 		@endif
 		
 		<hr style="border-color: black !important;">
@@ -33,7 +33,7 @@
 						<tr>
 							<td>{{ $q->id }}</td>
 							<td>{{ $q->patientName }}</td>
-							<td><span class="status btn btn-primary btn-block" href="javascript:void()">{{ $q->queueStatus }}</span></td>
+							<td><span class="status btn btn-primary btn-block" href="javascript:void()">On Queue</span></td>
 						</tr>
 					@endforeach
 				@endif

@@ -63,27 +63,24 @@ class PagesController extends Controller
         $activeTab = 1;
         $category = CheckupType::all();
         $queue = Queue::all();
-        $doctors = Doctor::all();
         $patient = Patient::where('PatientID', session('id'))->first();
-        return view('/main.queue-details', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
+        return view('/main.queue-details', compact('category', 'queue', 'patient', 'activeTab'));
     }
 
     public function realtime_queue(Request $r) {
         $activeTab = $r->activeTab;
         $category = CheckupType::all();
         $queue = Queue::all();
-        $doctors = Doctor::all();
         $patient = Patient::where('PatientID', session('id'))->first();
-        return view('/layouts.realtime', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
+        return view('/layouts.realtime', compact('category', 'queue', 'patient', 'activeTab'));
     }
 
     public function client_realtime() {
         // return 1;
         $category = CheckupType::all();
         $queue = Queue::all();
-        $doctors = Doctor::all();
         $patient = Patient::where('PatientID', session('id'))->first();
-        return view('/layouts.client-realtime', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
+        return view('/layouts.client-realtime', compact('category', 'queue', 'patient', 'activeTab'));
     }
 
     public function admin() {

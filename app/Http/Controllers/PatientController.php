@@ -41,8 +41,8 @@ class PatientController extends Controller
             'mobileNo' => $r->up_mobile
         );
         DB::table('patients')->where('patientID', $r->up_id)->update($details_array);
-        // session()->put('fullname', $r->up_name);
-        Session::set('fullname', $r->up_name);
+        session()->put('fullname', $r->up_name);
+        session()->save();
         return redirect('/patient-records');
     }
     

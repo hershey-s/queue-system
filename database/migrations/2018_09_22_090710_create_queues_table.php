@@ -18,8 +18,6 @@ class CreateQueuesTable extends Migration
             $table->integer('queueID');
             $table->integer('patientID');
             $table->string('patientName');
-            $table->string('queueStatus')->nullable();
-            $table->time('timeFinished')->nullable();
             $table->string('doctorInCharge')->nullable();
             $table->string('checkupTypeID');
             $table->string('checkupDescription')->nullable();

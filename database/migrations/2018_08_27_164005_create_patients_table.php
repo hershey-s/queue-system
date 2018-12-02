@@ -23,8 +23,6 @@ class CreatePatientsTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('mobileNo');
-            $table->string('userType');
-            $table->string('profpic')->nullable();
             $table->timestamps();
         });
     }
