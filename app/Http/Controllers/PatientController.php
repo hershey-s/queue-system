@@ -41,6 +41,8 @@ class PatientController extends Controller
             'mobileNo' => $r->up_mobile
         );
         DB::table('patients')->where('patientID', $r->up_id)->update($details_array);
+        // session()->put('fullname', $r->up_name);
+        Session::set('fullname', $r->up_name);
         return redirect('/patient-records');
     }
     
@@ -62,6 +64,6 @@ class PatientController extends Controller
 
     public function tester($item) {
         DB::select('DELETE FROM patients WHERE patientID = '.$item);
-        return back('/patient-list');
+        return back();
     }
 }

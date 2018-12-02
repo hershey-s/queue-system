@@ -4,8 +4,8 @@
 @stop
 
 @section('content')
-	<div class="col-sm-1"></div>
-	<div class="col-sm-10 well">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8 well">
 		<h1 style="text-align: center;">Edit Profile</h1>
 		<hr style="border-color: black !important;">
 		<form class="form-horizontal" action="/edit-profile" method="post" enctype="multipart/form-data">
@@ -39,13 +39,13 @@
 			  	</div>
 		  	</div>
 		  	<div class="form-group">
-			    <label for="up_mobile" class="col-sm-3">Mobile Number:</label>
-			    <div class="col-sm-3">
-			    	<input type="text" class="form-control" readonly value="      +63      ">
-			  	</div>
-			  	<div class="col-sm-6">
-			    	<input type="text" class="form-control" id="up_mobile" name="up_mobile" placeholder="e.g. 9123456789" value="{{ $patient->mobileNo }}">
-			  	</div>
+			    <label for="address" class="col-sm-3">Mobile Number:</label>
+				<div class="col-sm-9">
+					<div class="input-group">
+					  	<span class="input-group-addon" id="noPrefix">(PH) +63</span>
+					  	<input type="text" class="form-control" id="mobileNo" name="up_mobile" placeholder="e.g. 9123456789" value="{{ $patient->mobileNo }}">
+					</div>
+				</div>
 		  	</div>
 		  	<div class="form-group">
 			    <label for="up_civil" class="col-sm-3">Civil Status:</label>

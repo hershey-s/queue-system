@@ -19,6 +19,8 @@
 							<tr>
 								<th width="1">#</th>
 								<th class="text-center">Patient Name</th>
+								<th>Doctor In Charge</th>
+								<th>Checkup Name</th>
 								<th class="text-center">Actions</th>
 							</tr>
 						@endif
@@ -37,10 +39,15 @@
 								<tr>
 									<td>{{ $q->id }}</td>
 									<td>{{ $q->patientName }}</td>
+									<td>{{ $q->doctorInCharge }}</td>
+									<td>{{ $q->checkupDescription }}</td>
 									<td>
-										<a href="/sendSMS?queue={{ $q->id }}&pos={{ $z }}&num={{ $q->id }}&id={{ $q->patientID }}" class="btn btn-primary"><i class="fas fa-envelope"></i> Send</a>
-								    	<a href="/finish/{{$q->id}}" class="btn btn-success"><i class="fas fa-user-check"></i> Finish</a>
-								    	<a href="/cancel/{{$q->id}}" class="btn btn-danger"><i class="fas fa-user-times"></i> Cancel</a>
+										<!-- <div class="btn-group"> -->
+										<a title="SMS" href="/sendSMS?queue={{ $q->id }}&pos={{ $z }}&num={{ $q->id }}&id={{ $q->patientID }}" class="actions btn btn-primary"><i class="fas fa-envelope"></i></a>
+										<button title="Edit" class="edit-queue actions btn btn-warning" data-toggle="modal" data-target="#editModal" data-data="{{ $q }}"><i class="fas fa-edit"></i></button>
+								    	<a title="Finish" href="/finish/{{$q->id}}" class="actions btn btn-success"><i class="fas fa-user-check"></i></a>
+								    	<a title="cancel" href="/cancel/{{$q->id}}" class="actions btn btn-danger"><i class="fas fa-user-times"></i></a>
+								    	<!-- </div> -->
 									</td>
 								</tr>
 							@endforeach

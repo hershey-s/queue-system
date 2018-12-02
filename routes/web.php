@@ -15,6 +15,7 @@ Route::middleware('LoginCheck')->group(function() {
 	Route::get('/logout', 'LoginController@logout');
 	Route::post('/realtime-queue', 'PagesController@realtime_queue');
 	Route::get('/client-realtime', 'PagesController@client_realtime');
+	Route::get('/get-queue-details', 'QueueController@get_queue_details');
 
 	//Admin Pages
 	Route::middleware('AdminCheck')->group(function() {

@@ -28,6 +28,6 @@ class MasterRecordController extends Controller
         $m->checkupDate = $q->created_at->toDateString();
         $m->save();
         DB::select('DELETE FROM queues WHERE id ='.$item);
-        return redirect('/queue');
+        return back();
     }
 }

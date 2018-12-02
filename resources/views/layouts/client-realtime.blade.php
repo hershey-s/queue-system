@@ -3,9 +3,12 @@
 @endphp
 
 @foreach($category as $c)
-	<div class="col-sm-{{$x}} well queue">
+	<div class="col-sm-{{$x}} well queueTable">
 		<h3 style="text-align: center;">{{ $c->categoryName }}</h3>
-		<a href="/add-to-queue?pID={{session('id')}}&pName={{session('fullName')}}&cID={{$c->checkupTypeID}}" class="btn btn-success btn-block"><i class="fas fa-check-circle"></i> Join Queue</a>
+		@if(session('userType') != 'admin')
+			<a href="/add-to-queue?pID={{session('id')}}&pName={{session('fullName')}}&cID={{$c->checkupTypeID}}" class="btn btn-success btn-block"><i class="fas fa-check-circle"></i> Join Queue</a>
+		@endif
+		
 		<hr style="border-color: black !important;">
 		<br>
 		<div class="scroll">

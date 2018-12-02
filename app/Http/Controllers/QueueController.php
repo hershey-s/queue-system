@@ -41,7 +41,12 @@ class QueueController extends Controller
     }
 
     public function update_queue(Request $r) {
-        DB::table('queues')->where('id', $r->queueID)->update(['checkupDescription' => $r->desc, 'doctorInCharge' => $r->doc]);
+        DB::table('queues')->where('id', $r->updateID)->update(['checkupDescription' => $r->desc, 'doctorInCharge' => $r->doc]);
         return back();
+    }
+
+    public function get_queue_details(Request $r) {
+        $details = Queue::where('id', $r->id)->first();
+        return response()->json($details);
     }
 }

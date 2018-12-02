@@ -66,9 +66,15 @@ ul li a:hover, .navbar-brand:hover {
 	align-content: center; 
 }
 
-.scroll {
-	height: 360px;
-	overflow-y: scroll;
+.client {
+	display: table;
+	width: 100%;
+}
+
+.queueTable {
+	display: table-cell;
+	min-height: unset;
+	float: unset;
 }
 
 .details {
@@ -99,9 +105,18 @@ ul li a:hover, .navbar-brand:hover {
 	table-layout: auto !important;
 }
 
-.queue thead tr th:last-child {
-	width: 35% !important;
+.queue tbody tr td {
+	padding-bottom: 4px !important;
+}
+
+.queue tbody tr td:last-child {
+	width: 20%;
 	text-align: center;
+}
+
+.actions {
+	width: 42px;
+	margin-bottom: 5px;
 }
 
 .records, .queues {
@@ -115,8 +130,6 @@ li .active a {
 .records li a, .queues li a {
 	color: black !important;
 }
-
-/* asdasdasdas */
 
 /* active tab color */
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
@@ -164,5 +177,9 @@ li .active a {
 }
 
 #editModal {
+	top: 50px;
+}
+
+#opStatus {
 	top: 50px;
 }

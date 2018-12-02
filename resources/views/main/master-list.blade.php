@@ -17,7 +17,7 @@
 					<th>Doctor In Charge</th>
 					<th>Checkup Name</th>
 					<th>Checkup Date</th>
-					<th>Actions</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>

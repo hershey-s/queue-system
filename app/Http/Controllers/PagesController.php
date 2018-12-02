@@ -53,17 +53,19 @@ class PagesController extends Controller
     }
 
     public function queue() {
+        $category = CheckupType::all();
+        $queue = Queue::all();
+        $patient = Patient::where('PatientID', session('id'))->first();
+        return view('/main.queue', compact('category', 'queue', 'patient'));
+    }
+
+    public function queue_details() {
         $activeTab = 1;
         $category = CheckupType::all();
         $queue = Queue::all();
         $doctors = Doctor::all();
         $patient = Patient::where('PatientID', session('id'))->first();
-        return view('/main.queue', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
-    }
-
-    public function queue_details() {
-        $queue = Queue::all();
-        return view('/main.queue-details', compact('queue'));
+        return view('/main.queue-details', compact('category', 'queue', 'doctors', 'patient', 'activeTab'));
     }
 
     public function realtime_queue(Request $r) {
@@ -90,8 +92,17 @@ class PagesController extends Controller
     }
 
     public function status(Request $r) {
-        DB::table('offices')->where('id', 1)->update(['status_1' => $r->officeStatus]);
-        return redirect('/admin-panel');
+        $status = Office::where('id', 1)->first();
+        if($status->status_1 == 'Open') {
+            DB::table('offices')->where('id', 1)->update(['status_1' => 'Closed']);
+            DB::table('queues')->truncate();
+            return redirect('/admin-panel');
+        }
+        else {
+            DB::table('offices')->where('id', 1)->update(['status_1' => 'Open']);
+            return redirect('/admin-panel');
+        }
+        
     }
 
     public function register() {

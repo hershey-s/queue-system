@@ -10,7 +10,7 @@
 		    <h1><strong>{{$errors->first()}}!</strong> Try again tomorrow.</h1>
 	    </div>
     @endif
-	<div class="col-sm-3 well profile">
+	<div class="col-sm-3 well profile prof">
 		<div class="col-sm-12">
 			<h2>{{ $patient->fullname }}</h2>
 			<hr style="border-color: black !important;">
@@ -23,7 +23,7 @@
 		<h6>&nbsp;</h6>
 	</div>
 
-	<div class="col-sm-9 well">
+	<div class="col-sm-9 well prof">
 		<h2 style="text-align: center;">MY RECORDS</h2>
 		<hr style="border-color: black !important;">
 		<br>

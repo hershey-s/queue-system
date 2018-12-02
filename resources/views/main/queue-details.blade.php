@@ -1,58 +1,69 @@
 @extends('layouts.mainlayout')
 
+@section('title')
+	Queue Details
+@stop
+
 @section('content')
 	@php
 		$z = 0;
+		$x = (int)(12/count($category));
 	@endphp
+
 	<div class="col-sm-1"></div>
 
-	<div class="col-sm-10 well">
-		<table class="table table-hover table-bordered patient details">
-			<thead>
-				@if( $queue->count() == 0)
-					<tr>
-						<th>No Data</th>
-					</tr>
-				@else
-					<tr>
-						<th width="1">#</th>
-						<th width="" class="text-center">Patient Name</th>
-						<th class="text-center">Checkup Description</th>
-						<th class="text-center">Doctor-In-Charge</th>
-						<th class="text-center">Actions</th>
-					</tr>
-				@endif
-			</thead>
-			<tbody>
-				@if( $queue->count() == 0)
-					<tr>
-						<td>No Data</td>
-					</tr>
-				@else
-					@foreach($queue as $index => $q)
-						@php
-							$z += 1;
-						@endphp
-
-						<tr>
-							<td>{{ $q->id }}</td>
-							<td>{{ $q->patientName }}</td>
-							<form action="/queue-details" method="post">
-								{{ csrf_field() }}
-								<td><input class="form-control" type="text" name="desc" value="{{ $q->checkupDescription }}">
-								<input type="text" name="queueID" value="{{ $q->id }}" hidden>
-								</td>
-								<td><input class="form-control" type="text" name="doc" value="{{ $q->doctorInCharge }}"></td>
-								<td class="text-center">
-									<button class="status btn btn-success" href="javascript:void()"><i class="fas fa-save"></i> Save Details</button>
-								</td>
-							</form>
-						</tr>
-					@endforeach
-				@endif
-			</tbody>
-		</table>
+	<div>
+		<div class="col-sm-10 well">
+			<ul class="nav nav-tabs queues">
+			    @foreach($category as $c)
+			    	<li data-id="{{$c->checkupTypeID}}" class="realtab col-sm-{{$x}} {{ ($loop->first) ? 'active' : '' }}"><a data-toggle="tab" href="#menu{{$c->checkupTypeID}}">{{ $c->categoryName }}</a></li>
+				@endforeach
+			</ul>
+			<div class="ult">
+				@include('layouts.realtime')
+			</div>
+		</div>
 	</div>
+	
+	<div class="col-sm-1"></div>
 
-	<div class="col-sm-2"></div>
+    <!-- EDIT MODAL -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="defaultModalLabel">Edit Record</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/queue-details" id="edit-form">
+                        {{ csrf_field() }}
+                        <input type="hidden" id="updateID" name="updateID" class="form-control">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                            	<label class="form-label">Patient Name</label>
+                                <input type="text" id="edit-name" name="editName" class="form-control" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                            	<label class="form-label">Doctor</label>
+                                <input type="text" id="edit-doc" name="doc" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                            	<label class="form-label">Checkup</label>
+                                <input type="text" id="edit-checkup" name="desc" class="form-control">
+                            </div>
+                        </div>
+                	</div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success btn-block">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 @stop

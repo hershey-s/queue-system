@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="/fontawesome-free-5.4.1-web/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css?v=1">
+    <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css?v=1">
+    <link rel="stylesheet" href="/fontawesome-free-5.4.1-web/css/all.css?v=1">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css?v=1">
 </head>
 <body>
     <nav class="navbar navbar-default" role="navigation">
