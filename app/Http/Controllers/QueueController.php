@@ -31,7 +31,27 @@ class QueueController extends Controller
     public function sendSMS(Request $r) {
         $p = Patient::where('patientID', $r->id)->first();
         $no = $p->mobileNo;
-        $mes = '#' .$r->num.', you are in position '.$r->pos;
+        $cat = CheckupType::where('checkupTypeID', $r->category)->first();
+        $ends = array('th','st','nd','rd','th','th','th','th','th','th');
+        $position = $r->pos - 1;
+        if ((($position % 100) >= 11) && (($position % 100) <= 13)){
+            $ordinal = $position. 'th';
+        }
+        else {
+            $ordinal = $position. $ends[$position % 10];
+        }
+
+        if(($position + 1) == 1) {
+            $mes = 'Your checkup is ongoing.';
+        }
+
+        else if($position > 1 && $position < 6) {
+            $mes = 'We are now serving patient #'.$r->first. '. You are now '.$ordinal.' in '.$cat->categoryName;
+        }
+        else {
+            $mes = '#' .$r->num.', you are now in position no. '.$position;
+        }
+        return $mes;
         // iText($no, $mes);
         sendSMS($no, $mes);
         return back();

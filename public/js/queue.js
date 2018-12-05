@@ -5,7 +5,7 @@ $(document).ready(function() {
 	    "bDestroy": true
 	}) 
 
-	$('body .queue tbody tr:first-child td:last-child span').html('Up Next').addClass('btn-primary').addClass('btn-success')
+	$('body .queue tbody tr:first-child td:last-child span').html('Ongoing').addClass('btn-primary').addClass('btn-success')
 	
 	setInterval(function() { 
 		var activeTab = $('.queues').find('.active').data('id') 
@@ -31,7 +31,7 @@ $(document).ready(function() {
 		})
 			.then(function (response) {
 				$('.client').html(response.data)
-				$('body .queue tbody tr:first-child td:last-child span').html('Up Next').addClass('btn-primary').addClass('btn-success')
+				$('body .queue tbody tr:first-child td:last-child span').html(' Ongoing').addClass('btn-primary').addClass('btn-success')
 			})
 			.catch(function (error) {
 			// handle error

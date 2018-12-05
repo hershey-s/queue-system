@@ -43,7 +43,7 @@
 									<td>{{ $q->checkupDescription }}</td>
 									<td>
 										<!-- <div class="btn-group"> -->
-										<a title="SMS" href="/sendSMS?queue={{ $q->id }}&pos={{ $z }}&num={{ $q->id }}&id={{ $q->patientID }}" class="actions btn btn-primary"><i class="fas fa-envelope"></i></a>
+										<a title="SMS" href="/sendSMS?queue={{ $q->id }}&pos={{ $z }}&num={{ $q->id }}&id={{ $q->patientID }}&first={{ $q->where('checkupTypeID', $c->checkupTypeID)->first()->id }}&category={{$c->checkupTypeID}}" class="actions btn btn-primary"><i class="fas fa-envelope"></i></a>
 										<button title="Edit" class="edit-queue actions btn btn-warning" data-toggle="modal" data-target="#editModal" data-data="{{ $q }}"><i class="fas fa-edit"></i></button>
 								    	<a title="Finish" href="/finish/{{$q->id}}" class="actions btn btn-success"><i class="fas fa-user-check"></i></a>
 								    	<a title="cancel" href="/cancel/{{$q->id}}" class="actions btn btn-danger"><i class="fas fa-user-times"></i></a>
