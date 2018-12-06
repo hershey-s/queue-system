@@ -21,7 +21,7 @@ class MasterRecordController extends Controller
         $m = new MasterRecord;
         $m->patientID = $q->patientID;
         $m->patientName = $q->patientName;
-        $m->queueStatus = 'Finished';
+        //$m->queueStatus = 'Finished';
         $m->doctorInCharge = $q->doctorInCharge;
         $m->checkupTypeID = $q->checkupTypeID;
         $m->checkupDescription = $q->checkupDescription;

@@ -49,9 +49,9 @@ class QueueController extends Controller
             $mes = 'We are now serving patient #'.$r->first. '. You are now '.$ordinal.' in '.$cat->categoryName;
         }
         else {
-            $mes = '#' .$r->num.', you are now in position no. '.$position;
+            $mes = '#' .$r->num.', you are now '.$ordinal.' in '.$cat->categoryName;
         }
-        return $mes;
+        //return $mes;
         // iText($no, $mes);
         sendSMS($no, $mes);
         return back();
