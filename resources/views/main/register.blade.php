@@ -68,7 +68,7 @@
 		  	<div class="form-group">
 			    <label for="fullname" class="col-sm-3">Password:</label>
 			    <div class="col-sm-9">
-			    	<input type="password" class="form-control" id="password" name="password" value="{{ $password }}" required>
+			    	<input type="password" class="form-control" id="password" name="password" required>
 			  	</div>
 		  	</div>
 		  	<!-- <div class="form-group">
